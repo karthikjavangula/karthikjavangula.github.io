@@ -6,33 +6,41 @@ body{
 }
 .box{
   width: 450px;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgb(0 0 0 / 67%);
   padding: 40px;
   text-align: center;
   margin: auto;
   margin-top: 5%;
-  border-radius: 2%;
-  color: white;
+  border-radius: 5%;
+  color: #e7e1da;
   font-family: monospace;
 }
 .box-img{
   border-radius: 50%;
-  width: 200px;
-  height: 200px;
+  width: 210px;
+  height: 210px;
 }
 .box h1{
-  font-size: 50px;
+  font-size: 80px;
   letter-spacing: 4px;
   font-weight: 100;
+  transition: all cubic-bezier(0.39, 0.58, 0.57, 1) 600ms;
+}
+.box h1:hover{
+  color: rgb(252 153 0);
 }
 .box h5{
   font-size: 25px;
   letter-spacing: 3px;
   font-weight: 100;
+  transition: all cubic-bezier(0.39, 0.58, 0.57, 1) 600ms;
+}
+.box h5:hover{
+  color: rgb(255 239 196);
 }
 .box p{
-  font-size: 15px;
   text-align: left;
+  font-size: 15px;
 }
 ul{
   margin: 0;
@@ -47,8 +55,8 @@ ul{
   color: white;
   text-decoration: none;
   font-size: 60px;
-  transition: all ease-in-out 250ms;
+  transition: all ease-in-out 300ms;
 }
 .box li a:hover{
-  color: #b9b9b9;
+  color: #ffda81;
 }
