@@ -6,11 +6,12 @@ body{
 }
 .box{
   width: 450px;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.6);
   padding: 40px;
   text-align: center;
   margin: auto;
   margin-top: 5%;
+  border-radius: 2%;
   color: white;
   font-family: monospace;
 }
@@ -20,17 +21,18 @@ body{
   height: 200px;
 }
 .box h1{
-  font-size: 40px;
+  font-size: 50px;
   letter-spacing: 4px;
   font-weight: 100;
 }
 .box h5{
-  font-size: 20px;
+  font-size: 25px;
   letter-spacing: 3px;
   font-weight: 100;
 }
 .box p{
-  text-align: justify;
+  font-size: 15px;
+  text-align: left;
 }
 ul{
   margin: 0;
