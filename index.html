@@ -1,60 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>Website Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KJ's Portfolio</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&display=swap" rel="stylesheet">
 </head>
+
 <body>
-  <header>
-    <div class="logo">
-      <img src="logo.png" alt="Logo">
-    </div>
-    <div class="contact-us">
-      <a href="#">Test Change</a>
-    </div>
+  <header class="top-bar">
+    <a href="#" class="logo">
+      <symbol>
+        <img src="logo.svg" alt="KJ" class="logo-svg">
+      </symbol>
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#contact-me">Contact Me</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+      </ul>
+    </nav>
   </header>
-  
-  <div class="slideshow-container">
-    <div class="mySlides fade">
-      <img src="image1.jpg" style="width:100%">
-      <div class="caption">Caption 1</div>
+
+  <main class="content">
+    <div class="left-side">
+      <h1>Karthikeya Javangula</h1>
+      <h2>Your Job Title</h2>
     </div>
-    
-    <div class="mySlides fade">
-      <img src="image2.jpg" style="width:100%">
-      <div class="caption">Caption 2</div>
+    <div class="right-side">
+      <img src="your-image.jpg" alt="Your Name" class="profile-image">
     </div>
-    
-    <div class="mySlides fade">
-      <img src="image3.jpg" style="width:100%">
-      <div class="caption">Caption 3</div>
-    </div>
-    
-    <div class="mySlides fade">
-      <img src="image4.jpg" style="width:100%">
-      <div class="caption">Caption 4</div>
-    </div>
-    
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-  </div>
-  
-  <div class="buttons">
-    <button class="know-more">Know More</button>
-    <button class="contact-us">Contact Us</button>
-  </div>
-  
-  <section class="faq-section">
-    <h2>FAQs</h2>
-    <ul>
-      <li>Question 1?</li>
-      <li>Question 2?</li>
-      <li>Question 3?</li>
-      <li>Question 4?</li>
-    </ul>
+  </main>
+
+  <section id="contact-me">
+    <h2>Contact Me</h2>
+    <!-- Add contact information here -->
   </section>
-  
-  <script src="script.js"></script>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <!-- Add project information here -->
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <!-- Add experience information here -->
+  </section>
 </body>
+
 </html>
