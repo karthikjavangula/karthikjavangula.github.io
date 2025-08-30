@@ -1,56 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KJ's Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KJ - Software Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Marked.js library to convert Markdown to HTML -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Define your color palette here for easy editing */
+        :root {
+            --bg-color: #f8fafc; /* Light Gray */
+            --text-color: #1e293b; /* Slate 800 */
+            --primary-color: #4f46e5; /* Indigo 600 */
+            --secondary-color: #64748b; /* Slate 500 */
+            --card-bg: #ffffff; /* White */
+            --border-color: #e2e8f0; /* Slate 200 */
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+        /* Styles for the rendered markdown content */
+        #resume-content h1, #resume-content h2, #resume-content h3 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        #resume-content h1 { font-size: 2.25rem; }
+        #resume-content h2 { font-size: 1.875rem; }
+        #resume-content h3 { font-size: 1.5rem; }
+        #resume-content p {
+            line-height: 1.75;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+        #resume-content ul {
+            list-style-type: disc;
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+        #resume-content li {
+            margin-bottom: 0.5rem;
+        }
+        #resume-content a {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+        #resume-content a:hover {
+            opacity: 0.8;
+        }
+        #resume-content strong {
+            color: var(--text-color);
+            font-weight: 500;
+        }
+    </style>
 </head>
+<body class="antialiased">
 
-<body>
-  <header class="top-bar">
-    <a href="#" class="logo">
-      <symbol>
-        <img src="logo.svg" alt="KJ" class="logo-svg">
-      </symbol>
-    </a>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="#contact-me">Contact Me</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#experience">Experience</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main class="content">
-    <div class="left-side">
-      <h1>Karthikeya Javangula</h1>
-      <h2>Your Job Title</h2>
+    <div class="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <!-- Main Card -->
+        <div id="resume-card" class="bg-[var(--card-bg)] rounded-2xl shadow-lg overflow-hidden transition-all duration-300">
+            <div class="p-8 sm:p-12">
+                <div id="resume-content">
+                    <!-- Loading state -->
+                    <div id="loading-spinner" class="text-center py-16">
+                         <div class="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] text-[var(--primary-color)] motion-reduce:animate-[spin_1.5s_linear_infinite]" role="status">
+                            <span class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">Loading...</span>
+                        </div>
+                        <p class="mt-4 text-lg text-[var(--secondary-color)]">Fetching latest resume...</p>
+                    </div>
+                    <!-- Resume will be rendered here -->
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <footer class="text-center mt-8 text-sm text-[var(--secondary-color)]">
+            <p>This resume is dynamically loaded from a Markdown file. Last updated automatically.</p>
+            <p>&copy; <span id="current-year"></span> KJ. All Rights Reserved.</p>
+        </footer>
     </div>
-    <div class="right-side">
-      <img src="your-image.jpg" alt="Your Name" class="profile-image">
-    </div>
-  </main>
 
-  <section id="contact-me">
-    <h2>Contact Me</h2>
-    <!-- Add contact information here -->
-  </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set the current year in the footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+            
+            // --- Configuration ---
+            // 1. Replace 'YOUR_GITHUB_USERNAME' with your GitHub username.
+            // 2. Replace 'YOUR_REPOSITORY_NAME' with your repository name.
+            // 3. Ensure your resume file is named 'resume.md' in the root of that repository.
+            const githubUsername = 'YOUR_GITHUB_USERNAME';
+            const repoName = 'YOUR_REPOSITORY_NAME';
+            // By default, it looks for resume.md. Change if your file has a different name.
+            const resumeFileName = 'resume.md'; 
+            
+            // Construct the URL to the raw resume file on GitHub
+            const resumeUrl = `https://raw.githubusercontent.com/${githubUsername}/${repoName}/main/${resumeFileName}`;
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <!-- Add project information here -->
-  </section>
+            const resumeContentEl = document.getElementById('resume-content');
+            const loadingSpinnerEl = document.getElementById('loading-spinner');
 
-  <section id="experience">
-    <h2>Experience</h2>
-    <!-- Add experience information here -->
-  </section>
+            // Function to fetch and render the resume
+            async function loadResume() {
+                try {
+                    const response = await fetch(resumeUrl);
+                    
+                    if (!response.ok) {
+                        throw new Error(`Could not fetch resume. Status: ${response.status}. Make sure your username, repo name, and file path are correct.`);
+                    }
+                    
+                    const markdownText = await response.text();
+                    
+                    // Convert Markdown to HTML using marked.js
+                    const htmlContent = marked.parse(markdownText);
+                    
+                    // Hide spinner and display content
+                    loadingSpinnerEl.style.display = 'none';
+                    resumeContentEl.innerHTML = htmlContent;
+
+                } catch (error) {
+                    console.error('Error fetching resume:', error);
+                    loadingSpinnerEl.style.display = 'none';
+                    resumeContentEl.innerHTML = `
+                        <div class="text-center bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-lg relative" role="alert">
+                            <strong class="font-bold">Oops!</strong>
+                            <span class="block sm:inline">Failed to load resume.</span>
+                            <p class="text-sm mt-2">${error.message}</p>
+                            <p class="text-sm mt-1">Please check the console for more details and verify your GitHub configuration in the script.</p>
+                        </div>
+                    `;
+                }
+            }
+
+            // Load the resume on page load
+            loadResume();
+        });
+    </script>
 </body>
-
 </html>
