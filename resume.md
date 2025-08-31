@@ -1,45 +1,60 @@
-KJ - Python Developer
-A passionate and detail-oriented developer with a love for clean code and creative problem-solving. Based in India.
+<!-- The (first) h1 will be used as the <title> of the HTML page -->
+# Richard Hendricks
 
-Email: your.email@example.com | LinkedIn: https://www.google.com/search?q=linkedin.com/in/yourprofile | GitHub: github.com/yourusername
+<!-- The unordered list immediately after the h1 will be formatted on a single
+line. It is intended to be used for contact details -->
+- <richard.hendriks@mail.com>
+- (912) 555-4321
+- [richardhendricks.example.com](http://richardhendricks.example.com)
+- San Francisco, CA
 
-Skills
-Languages: Python, JavaScript, SQL
+<!-- The paragraph after the h1 and ul and before the first h2 is optional. It
+is intended to be used for a short summary. -->
+CEO and Software Engineer with knowledge of applied information theory,
+including optimizing lossless compression schema of both the length-limited and
+adaptive variants.
 
-Frameworks: Django, Flask, React
+## Experience
 
-Databases: PostgreSQL, MongoDB, Redis
+<!-- You have to wrap the "left" and "right" half of these headings in spans by
+hand -->
+### <span>CEO/President, Pied Piper</span> <span>Dec 2013 -- Dec 2014</span>
 
-Tools: Git, Docker, AWS, Terraform
+Pied Piper is a multi-platform technology based on a proprietary universal
+compression algorithm that has consistently fielded high Weisman Scores™ that
+are not merely competitive, but approach the theoretical limit of lossless
+compression.
 
-Other: RESTful APIs, TDD, Agile Methodologies
+ - Build an algorithm for artist to detect if their music was violating
+   copyright infringement laws
+ - Successfully won Techcrunch Disrupt
+ - Optimized an algorithm that holds the current world record for Weisman Scores
 
-Experience
-Senior Python Developer | Tech Solutions Inc.
-January 2022 - Present
+### <span>Teacher, CoderDojo</span> <span>July 2013 -- Dec 2013</span>
 
-Led the development of a high-traffic e-commerce platform using Django and React, resulting in a 30% increase in user engagement.
+Global movement of free coding clubs for young people.
 
-Designed and implemented a scalable microservices architecture on AWS.
+ - Awarded 'Teacher of the Month'
 
-Mentored junior developers and conducted code reviews to maintain high code quality standards.
+## Projects
 
-Software Engineer | Data Innovators LLC
-June 2019 - December 2021
+### <span>Miss Direction</span> <span>Aug 2016</span>
 
-Developed data processing pipelines using Python and Apache Spark.
+A mapping engine that misguides you:
 
-Built and maintained RESTful APIs for data access and visualization.
+   - Won award at AIHacks 2016
+   - Built by all women team of newbie programmers
+   - Using modern technologies such as GoogleMaps, Chrome Extension and Javascript
 
-Collaborated with data scientists to deploy machine learning models into production.
+## Education
 
-Projects
-Personal Portfolio Website
-A dynamic, responsive website (the one you're looking at!) built with HTML, Tailwind CSS, and JavaScript. It fetches and renders this resume from a Markdown file hosted on my GitHub.
+### <span>University of Oklahoma, BA Information Technology</span> <span>2011 -- 2014</span>
 
-Task Management API
-A RESTful API built with Flask and PostgreSQL for managing tasks and projects. Features user authentication and a clean, documented API.
+  - GPA 4.0
+  - DB1101 - Basic SQL
+  - CS2011 - Java Introduction
 
-Education
-Bachelor of Technology in Computer Science
-Awesome University, Graduated 2019
+## Skills
+
+ - Web development: HTML, CSS, JavaScript
+ - Compression: Mpeg, MP4, GIF
